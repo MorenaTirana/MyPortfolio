@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morena Tirana | Home Page</title>
+
+     <!-- Contact Form Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+     rel="stylesheet" 
+     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+     crossorigin="anonymous">
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media(max-width:500px){
+          
+            #submit{
+           background-color: red;
+           margin-left:150px;
+            }
+            #submit:hover{
+                background-color: #fff;
+                color: black;
+                box-shadow: 10px 5px 10px red;
+            }
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- navbar-->
+    <nav class="navbar" id="navbar">
+        <h1 class="brand">morena tirana</h1>
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="links-container">
+            <li class="links-item"><a href="#" class="link active">home</a></li>
+            <li class="links-item"><a href="#projects" class="link">projects</a></li>
+            <li class="links-item"><a href="#contact-section" class="link">contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- home section-->
+    <section class="home">
+        <div class="hero-content">
+            <h1 class="hero-heading"><span class="highlight">Hi, I'm </span>Morena</span></h1>
+            <p class="profession"> web developer</p>
+            <p class="info"></p>
+           
+        </div>
+        <img src="img/img1.png" class="image" alt="">
+    </section>
+
+    <!--- about section -->
+    <section class="about" id="about-section">
+        <h2 class="heading"><span class="highlight">about </span> me </span></h2>
+        <p class="sub-heading">I thrive learning!</p>
+        <div class="separator"></div>
+
+        <div class="about-me-container">
+            <div class="left-col">
+                <img src="img/CV.png" class="about-image" alt="My CV">
+                <button onclick="download()">Download CV</button>
+            </div>
+        
+            <div class="right-col">
+                <p> 
+                   Born in Durres, Albania 🇦🇱, raised up in Italy 🇮🇹, I 
+                   have lived in Amsterdam 🇳🇱, 2010 - 2011, Ibiza 🇪🇸, 2013, 
+                   Saudi Arabia 🇸🇦, 2015 - 2017, 
+                   and since 2017 I am based in Stockholm, Sweden 🇸🇪.
+                   Raising up in Italy was a blessing since Italy is not only
+                   one of the most beautiful countries in the world, but also because
+                   Italy provides a rich culture and education which did shape my 
+                   personality and cultural background. 
+                   Among all these countries I lived in, Saudi Arabia gave me the most 
+                   pleasant experience on a professional and human level because I worked 
+                   at the Italian School of Jeddah
+                   as Administrative Assistant and Technology Teacher of Grades 6, 7, and 8. 
+                   <br/> <br/>
+                    I studied Foreign Languages during my Lyceum (highschool) years 
+                   , Math Engineering at the Polytechnic 
+                   of Milan, and Software Engineering at the Arizona State University.
+                   Despite being a working student, the financial limitations
+                   faced  affected the achievement of my bachelor in due time. 
+                   So, now I still miss few exams from getting my Bachelor in Software Engineering. 
+                   In the meantime, my PASSION for coding has driven me to keep coding and 
+                   improve my coding skills every day more. 
+                   Coding is my passion and my dream is to work as a programmer. 
+                   <br/> <br/>
+                   Alongside with coding, I also love Art and History. 
+                   I love creativity in all ways and shapes. I dream of opening my own 
+                   Art gallery one day so I could see exposed all artists I love.
+                   I consider coding as a form of art combined with science. 
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+          <!---best selling products-->
+          
+    <section class="projects" id="projects">
+        <h2 class="heading"><span class="highlight">My </span> Projects </span></h2>
+        <div class="separator"></div>
+        <div class="product-container">
+          <div class="product-card">
+            <img src="img/sheCodesPortf.png" class="product-img" alt="">
+            <p class="product-name">
+              <a href="sheCodesPortf.html">SheCodes Portfolio</a>
+            </p>
+        </div>
+            <div class="product-card">
+                <img src="img/weather.png" class="product-img" alt="">
+                <p class="product-name"><a href="weatherApp.html">Weather App</a></p>
+            </div>
+            <div class="product-card">
+              <img src="img/weather.png" class="product-img" alt="">
+              <p class="product-name"><a href="hisweatherApp.html">Matt's Weather App</a></p>
+          </div>
+            <!----
+            <div class="product-card">
+                <img src="img/js.png" class="product-img" alt="">
+                <p class="product-name"><a href="theory.html">Theory</a></p>
+            </div>
+          -->
+          <div class="product-card">
+            <img src="img/calculator.png" class="product-img" alt="">
+            <p class="product-name"><a href="comingsoon.html">Coming Soon</a></p>
+        </div>
+            <div class="product-card">
+                <img src="img/calculator.png" class="product-img" alt="">
+                <p class="product-name-even"><a href="calculator.html">Calculator</a></p>
+            </div>
+            <!-----
+            <div class="product-card">
+                <img src="img/gameConsole.png" class="product-img" alt="">
+                <p class="product-name"><a href="gameConsole.html">Game<br>Console</a></p>
+            </div>
+            --->
+            <div class="product-card">
+                <img src="img/rps.png" class="product-img" alt="">
+                <p class="product-name-even"><a href="gameUI.html">Game UI</a></p>
+            </div>
+            <div class="product-card">
+                <img src="img/evenOdd.png" class="product-img" alt="">
+                <p class="product-name"><a href="evenOdd.html">Even/Odd</a></p>
+            </div>
+            <div class="product-card">
+                <img src="img/diagonal.png" class="product-img" alt="">
+                <p class="product-name-even"><a href="diagonal.html">Diagonals</a></p>
+            </div>
+            <div class="product-card">
+                <img src="img/circle.png" class="product-img" alt="">
+                <p class="product-name"><a href="circle.html">Circle</a></p>
+            </div>
+            <div class="product-card">
+                <img src="img/triangle.png" class="product-img" alt="">
+                <p class="product-name-even"><a href="triangle.html">Triangle</a></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!---contact form --
+    <section class="contact" id="contact-section">
+        <h2 class="heading">Contact <span class="highlight">me</span></h2>
+        <p class="sub-heading">Lorem ipsum dolor sit amet consectetur.</p>
+        <div class="separator"></div>
+
+        <div class="contact-form">
+            <div class="name">
+                <input type="text" class="first-name" required placeholder="first name">
+                <input type="text" class="last-name" required placeholder="last name">
+            </div>
+            <input type="email" required class="email" placeholder="email">
+            <textarea class="message" placeholder="message" required></textarea>
+            <button class="btn contact-btn">contact</button>
+        </div>
+    </section>
+
+    <!-- Contact Us--
+    <div class="container">
+        <form action="https://formsubmit.co/tiranamorena@gmail.com" method="POST">
+        <!---<form onsubmit="sendEmail(); reset(); return false;">--
+            <h3>Get in Touch</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Email id" required>
+            <input type="text" id="phone" placeholder="Phone no." required>
+            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+-->
+<!-----
+<div class="container">
+    <span class="big-circle"></span>
+    <img src="img/shape.png" class="square" alt="" />
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Let's get in touch</h3>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+          dolorum adipisci recusandae praesentium dicta!
+        </p>
+
+        <div class="info">
+          <div class="information">
+            <img src="img/location.png" class="icon" alt="" />
+            <p>92 Cherry Drive Uniondale, NY 11553</p>
+          </div>
+          <div class="information">
+            <img src="img/email.png" class="icon" alt="" />
+            <p>lorem@ipsum.com</p>
+          </div>
+          <div class="information">
+            <img src="img/phone.png" class="icon" alt="" />
+            <p>123-456-789</p>
+          </div>
+        </div>
+
+        <div class="social-media">
+          <p>Connect with us :</p>
+          <div class="social-icons">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    -->
+    <section class="contact" id="contact-section">
+      <div class="container mt-5">
+        <h1 class="contact-me">Contact Me!</h1>
+        <form class="row g-3" 
+         action="https://formsubmit.co/f959e7f4be88f9b09d0e1343d7a14733"
+         method="POST">
+          <!-- Honeypot -->
+          <input type="text" name="_honey" style="display: none;">
+
+          <!-- Disable Captcha -->
+          <input type="hidden" name="_captcha" value="false">
+
+          <input type="hidden" name="_next" 
+          value="https://morenatirana.github.io/portfolio/success.html" >
+
+          
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="name" id="firstName" required>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
+          </div>
+          <div class="col-md-8">
+            <label for="emailInfo" class="form-label">E-mail</label>
+            <input type="email" class="form-control" name="email" id="emailInfo" required>
+          </div>
+          <div class="col-md-4">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" name="phone" id="phoneNumber" 
+            placeholder="+1 (415) 867-5309">
+          </div>
+          <div class="col-md-12">
+            <label for="comments" class="form-label">Message Content:</label>
+            <textarea class="form-control" id="comments" name="Message,&nbsp;Content" 
+            rows="3" required></textarea>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+          </div>
+        </form>
+    </div>
+  </section>
+<!-----
+      <div class="contact-form">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+
+        <form action="index.html" autocomplete="off">
+          <h3 class="title">Contact us</h3>
+          <div class="input-container">
+            <input type="text" name="name" class="input" />
+            <label for="">Username</label>
+            <span>Username</span>
+          </div>
+          <div class="input-container">
+            <input type="email" name="email" class="input" />
+            <label for="">Email</label>
+            <span>Email</span>
+          </div>
+          <div class="input-container">
+            <input type="tel" name="phone" class="input" />
+            <label for="">Phone</label>
+            <span>Phone</span>
+          </div>
+          <div class="input-container textarea">
+            <textarea name="message" class="input"></textarea>
+            <label for="">Message</label>
+            <span>Message</span>
+          </div>
+          <input type="submit" value="Send" class="btn" />
+        </form>
+      </div>
+    </div>
+  </div>
+  --->
+    <footer class="footer-1">
+        <h1 class="footer-heading">
+            <span class="highlight">made with  </span>
+            l❤️ve
+            <span class="highlight"> | by</span>
+            Morena Tirana
+        </h1>
+    </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+   
+    <!--- Script to Download the CV image-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script>
+        function download(){
+            axios({
+                url:'https://i.postimg.cc/FK9nL2zX/CV.png',
+                method:'GET',
+                responseType:'blob'
+            }).then((response) => {
+                const url = window.URL.createObjectURL(new Blob([response.data]))
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'CV.png');
+                document.body.appendChild(link);
+                link.click();
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+    crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
