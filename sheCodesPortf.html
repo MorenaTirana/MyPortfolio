@@ -19,11 +19,137 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/style.css" />
+    
+    <style>
+      :root {
+    --primary-color: #6c63ff;
+    --secondary-color: #f5f2fe;
+    --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  body {
+    margin: 100px 0;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 96px;
+  }
+  
+  h2 {
+    font-size: 48px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    opacity: 0.7;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .navigation-links {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  
+  .navigation-links a {
+    margin: 20px;
+  }
+  
+  .primary-link {
+    border-radius: 4px;
+    padding: 20px 15px;
+    text-decoration: none;
+    text-transform: capitalize;
+    background: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    color: white;
+  }
+  
+  .primary-link:hover {
+    color: white;
+  }
+  
+  .secondary-link {
+    border-radius: 4px;
+    padding: 20px 15px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+  
+  .homepage-link {
+    color: var(--primary-color);
+    text-align: center;
+    display: block;
+  }
+  
+  .about-paragraphs {
+    margin: 30px 0;
+  }
+  
+  .about-paragraphs p {
+    margin: 10px;
+  }
+  
+  .email-link {
+    display: flex;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 28px;
+    text-decoration: none;
+  }
+  
+  .email-link:hover {
+    text-decoration: underline;
+  }
+  .name{
+    font-weight: bold;
+    color: #6c63ff;
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 48px;
+      line-height: 1.5;
+    }
+  
+    h2 {
+      font-size: 32px;
+      text-align: center;
+    }
+  
+    p {
+      text-align: center;
+      font-size: 15px;
+    }
+  
+    .project-link {
+      display: block;
+      text-align: center;
+      margin: 0 20px;
+    }
+  }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">Morena Tirana</a>
+      <div class="container">
+        <div class="name">
+          <a class="navbar-brand" id="name" href="index.html">
+            Morena Tirana
+          </a>
+        </div>
         <button
           class="navbar-toggler"
           type="button"
@@ -41,20 +167,20 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="/"
+                href="sheCodesPortf.html"
                 tilte="Homepage"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about.html" title="About Morena Tirana"
+              <a class="nav-link" href="about.html" title="About Morena Tirana"
                 >About me</a
               >
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="/about.html#contact"
+                href="about.html#contact"
                 title="Contact Morena Tirana"
                 >Contact me</a
               >
@@ -68,12 +194,12 @@
     <h3 class="text-center"> 🇦🇱 Front-end developer, based in Stockholm, Sweden 🇸🇪</h3>
     <div class="navigation-links mb-5">
       <a
-        href="/about.html#contact"
+        href="about.html#contact"
         class="primary-link"
         title="Contact Morena Tirana"
         >Contact me</a
       >
-      <a href="/about.html" class="secondary-link" title="About Morena Tirana"
+      <a href="about.html" class="secondary-link" title="About Morena Tirana"
         >About me</a
       >
     </div>
@@ -81,7 +207,7 @@
       <div class="row">
         <div class="col-sm-6">
           <img
-            src="/images/yoga.png"
+            src="img/yoga.png"
             alt="Yoga project "
             class="img-fluid rounded d-none d-sm-block"
           />
@@ -118,7 +244,7 @@
         </div>
         <div class="col-sm-6">
           <img
-            src="/images/weather.png"
+            src="img/weather.png"
             class="img-fluid rounded d-none d-sm-block"
             alt="Weather project"
           />
@@ -127,7 +253,7 @@
       <div class="row mt-5">
         <div class="col-sm-6">
           <img
-            src="/images/yogurt.png"
+            src="img/yogurt.png"
             class="img-fluid rounded d-none d-sm-block"
             alt="Yogurt project"
           />
@@ -150,7 +276,7 @@
         <div class="row mt-5">
             <div class="col-sm-6">
               <img
-                src="/images/croissant.png"
+                src="img/croissant.png"
                 class="img-fluid rounded d-none d-sm-block"
                 alt="Croissant project"
               />

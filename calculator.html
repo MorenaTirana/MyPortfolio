@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+   
+    <style>
+        html {
+  text-align: center;
+  font-family: monospace;
+}
+/* Header */
+.header {
+  background-color: #e5e5e5;
+}
+
+.home {
+  z-index: 99;
+  margin-left: 10px;
+}
+
+.home img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  box-shadow: 2px 2px 10px 10px #a19c9c;
+}
+
+.home img:hover {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+  transition: all 0.1s;
+  box-shadow: 2px 2px 10px 10px #fff;
+}
+
+.title {
+  margin-top: -10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.repo {
+  background-color: #e5e5e5;
+  font-weight: bold;
+  height: 30px;
+  padding-top: 10px;
+}
+.repo a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+.repo a:hover {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  text-decoration: underline;
+}
+h1 {
+  margin-top: 30px;
+  color: #aaaaaa;
+}
+
+#calculator {
+  display: flex;
+  min-height: 90vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 90vh;
+  overflow: hidden;
+}
+
+#calculator-grid {
+  margin-top: -20px;
+  background-color: #d6d2d2;
+  box-shadow: 2px 2px 20px 5px #7a7979;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  gap: 2px;
+}
+#calculator-grid > button {
+  margin: 1px;
+  border-radius: 5%;
+  border: none;
+  font-weight: initial;
+  font-size: 2em;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+#display {
+  grid-column: 1 / -1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 5px;
+  font-size: 5.5em;
+  font-weight: initial;
+  color: #aaaaaa;
+  text-shadow: 3px 3px 4px #000;
+  margin: 5px;
+}
+
+.operator,
+.equals {
+  background-color: #fff;
+  color: #807c7c;
+}
+
+.operator:hover,
+.equals:hover {
+  background-color: #aaaaaa;
+  color: #fff;
+}
+
+.operand,
+.decimal {
+  background-color: #f7f7f7;
+  color: #807c7c;
+}
+
+.operand:hover,
+.decimal:hover {
+  background-color: #aaaaaa;
+  color: #fff;
+}
+
+.clear,
+.sign,
+.percent,
+#backspace {
+  background-color: #b8b3b3;
+  color: #807c7c;
+}
+
+.clear:hover,
+.sign:hover,
+.percent:hover,
+#backspace:hover {
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding-top: 15px;
+  background-color: #e5e5e5;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  padding-bottom: 15px;
+}
+
+.footer span {
+  color: #fff;
+  text-shadow: 4px 2px 4px #b10000fd;
+  font-weight: bold;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="home">
+            <a href="index.html">
+                <img src="img/home.png">
+            </a>
+        </div>
+        <div class="title">
+            <h1>Calculator</h1>
+        </div>
+    </div>
+
+    <p class="repo">  Link to
+        <a href="https://github.com/MorenaTirana/JavaScript-Calculator">
+            GitHub </a></p>
+    <main id="calculator">
+        <div id="calculator-grid">
+            <div id="display">
+               
+            </div>
+            <button type="button" class="clear" value="clear" data-key="46">AC</button>
+            <button type="button" class="sign" value="sign" data-key="192">+/-</button>
+            <button type="button" class="percent" value="percent" data-key="80">%</button>
+            <button type="button" class="operator" value="/" data-key="68">/</button>
+            <button type="button" class="operand" value="7" data-key="55">7</button>
+            <button type="button" class="operand" value="8" data-key="56">8</button>
+            <button type="button" class="operand" value="9" data-key="57">9</button>
+            <button type="button" class="operator" value="*" data-key="88">*</button>
+            <button type="button" class="operand" value="4" data-key="52">4</button>
+            <button type="button" class="operand" value="5" data-key="53">5</button>
+            <button type="button" class="operand" value="6" data-key="54">6</button>
+            <button type="button" class="operator" value="-" data-key="173">-</button>
+            <button type="button" class="operand" value="1" data-key="49">1</button>
+            <button type="button" class="operand" value="2" data-key="50">2</button>
+            <button type="button" class="operand" value="3" data-key="51">3</button>
+            <button type="button" class="operator" value="+" data-key="61">+</button>
+            <button id="backspace" onclick ="backspace()" data-key="8">Del</button>
+            <button type="button" id="zero" class="operand" value="0" data-key="48">0</button>
+            <button type="button" class="decimal" value="." data-key="190">.</button>
+            <button type="button" class="equals" value="=" data-key="69">=</button>
+        </div>
+    </main>
+
+        
+<div class="footer"> 
+    Made with ❤️ by 
+    <span>Morena Tirana</span>
+</div>
+<script>
+    let displayValue = '0';
+let firstOperand = null;
+let secondOperand = null;
+let firstOperator = null;
+let secondOperator = null;
+let result = null;
+const buttons = document.querySelectorAll('button');
+
+window.addEventListener('keydown', function(e){
+    const key = document.querySelector(`button[data-key='${e.keyCode}']`);
+    key.click();
+});
+
+function updateDisplay() {
+    const display = document.getElementById('display');
+    display.innerText = displayValue;
+    if(displayValue.length > 9) {
+        display.innerText = displayValue.substring(0, 9);
+    }
+}
+  
+updateDisplay();
+
+function clickButton() {
+    for(let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function() {
+            if(buttons[i].classList.contains('operand')) {
+                inputOperand(buttons[i].value);
+                updateDisplay();
+            } else if(buttons[i].classList.contains('operator')) {
+                inputOperator(buttons[i].value);
+            } else if(buttons[i].classList.contains('equals')) {
+                inputEquals();
+                updateDisplay();
+            } else if(buttons[i].classList.contains('decimal')) {
+                inputDecimal(buttons[i].value);
+                updateDisplay();
+            } else if(buttons[i].classList.contains('percent')) {
+                inputPercent(displayValue);
+                updateDisplay();
+            } else if(buttons[i].classList.contains('sign')) {
+                inputSign(displayValue);
+                updateDisplay();
+            } else if(buttons[i].classList.contains('clear')){
+                clearDisplay();
+                updateDisplay();
+            } else if(buttons[i].classList.contains('backspace'))
+            backspace();
+            updateDisplay();
+        }
+    )}
+}
+
+clickButton();
+
+function inputOperand(operand) {
+    if(firstOperator === null) {
+        if(displayValue === '0' || displayValue === 0) {
+            //1st click - handles first operand input
+            displayValue = operand;
+        } else if(displayValue === firstOperand) {
+            //starts new operation after inputEquals()
+            displayValue = operand;
+        } else {
+            displayValue += operand;
+        }
+    } else {
+        //3rd/5th click - inputs to secondOperand
+        if(displayValue === firstOperand) {
+            displayValue = operand;
+        } else {
+            displayValue += operand;
+        }
+    }
+}
+
+function inputOperator(operator) {
+    if(firstOperator != null && secondOperator === null) {
+        //4th click - handles input of second operator
+        secondOperator = operator;
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
+        displayValue = roundAccurately(result, 15).toString();
+        firstOperand = displayValue;
+        result = null;
+    } else if(firstOperator != null && secondOperator != null) {
+        //6th click - new secondOperator
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
+        secondOperator = operator;
+        displayValue = roundAccurately(result, 15).toString();
+        firstOperand = displayValue;
+        result = null;
+    } else { 
+        //2nd click - handles first operator input
+        firstOperator = operator;
+        firstOperand = displayValue;
+    }
+}
+
+function inputEquals() {
+    //hitting equals doesn't display undefined before operate()
+    if(firstOperator === null) {
+        displayValue = displayValue;
+    } else if(secondOperator != null) {
+        //handles final result
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
+        if(result === '∞') {
+            displayValue = '∞';
+        } else {
+            displayValue = roundAccurately(result, 15).toString();
+            firstOperand = displayValue;
+            secondOperand = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
+    } else {
+        //handles first operation
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
+        if(result === '∞') {
+            displayValue = '∞';
+        } else {
+            displayValue = roundAccurately(result, 15).toString();
+            firstOperand = displayValue;
+            secondOperand = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
+    }
+}
+
+function inputDecimal(dot) {
+    if(displayValue === firstOperand || displayValue === secondOperand) {
+        displayValue = '0';
+        displayValue += dot;
+    } else if(!displayValue.includes(dot)) {
+        displayValue += dot;
+    } 
+}
+
+function inputPercent(num) {
+    displayValue = (num/100).toString();
+}
+
+function inputSign(num) {
+    displayValue = (num * -1).toString();
+}
+
+function clearDisplay() {
+    displayValue = '0';
+    firstOperand = null;
+    secondOperand = null;
+    firstOperator = null;
+    secondOperator = null;
+    result = null;
+}
+
+function backspace(){ 
+    displayValue = displayValue.substring(0, displayValue.length-1);   
+}
+
+
+
+function operate(x, y, op) {
+    if(op === '+') {
+        return x + y;
+    } else if(op === '-') {
+        return x - y;
+    } else if(op === '*') {
+        return x * y;
+    } else if(op === '/') {
+        if(y === 0) {
+            return '∞';
+        } else {
+        return x / y;
+        }
+    }
+}
+
+function roundAccurately(num, places) {
+    return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
+}
+</script>
+
+</body>
+</html>

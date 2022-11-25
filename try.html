@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CKIN | Coming Soon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+   
+    <script src="https://kit.fontawesome.com/a2844f85a2.js" crossorigin="anonymous"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  /*background-image: url(../img/logo.png); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-section {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  filter: contrast(1.2);
+}
+
+video {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  overflow: hidden;
+}
+
+
+/* Coming Soon text */
+
+.content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: -30%;
+  z-index: 20;
+}
+
+h1 {
+  color: transparent;
+  position: relative;
+  margin: 290px 0 0;
+  margin-left: 200px;
+  -webkit-text-stroke: 0.001vw #000;
+  font-family: 'Abril Fatface', cursive;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #fff;
+  -webkit-text-stroke: 0vw #fff;
+  border-right: 2px solid #fff;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+.coming-soon {
+  place-items: center;
+  width: 13%;
+  margin: auto;
+  display: grid;
+  text-align: center;
+}
+
+/* animation of the coming soon */
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+    height: 100px;
+  }
+
+  70%,
+  80%,
+  90% {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+/* Menu Bar Icon */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1.6%;
+}
+
+.col:first-of-type {
+  margin-left: 0;
+}
+
+.ten { width: 83.06%; }
+
+.container{
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.row .three{
+  padding: 8px 30px;
+  margin-top: 46%;
+  margin-left:58%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ecf0f1;
+  text-align: center;
+}
+
+.hamburger .line{
+  width: 180px;
+  height: 50px;
+  background-color: #fff;
+  display: block;
+  margin: 20px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+  background-color: #000;
+}
+
+.hamburger:hover .enter{
+  visibility: visible;
+  opacity: 1;
+  color: #000;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+}
+
+#hamburger-10{  
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-10.is-active{
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#hamburger-10.is-active .line{
+  width: 200px;
+}
+
+#hamburger-10.is-active .line:nth-child(1){
+  width: 200px
+}
+
+#hamburger-10.is-active .line:nth-child(2){
+  width: 200px
+}
+
+.enter{
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 9999;
+    font-size: 50px;
+    margin-top:-80%;
+    color:#fff;
+    text-shadow: 5px 5px 1px #000;
+    text-transform: uppercase;
+}
+
+
+@keyframes smallbig{
+  0%, 100%{
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50%{
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+
+/* social links icons */
+
+.social-links i {
+  font-size: 25px;
+  margin: 40px 10px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 99;
+}
+
+.social-links {
+  width: 25px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 70%;
+  left: 50%;
+}
+
+.social-links i:hover {
+  color: black;
+}
+@media (max-width:1300px) {
+  .content {
+    padding: 0px;
+  }
+    
+  .row .three{
+  padding: 8px 30px;
+  margin-top: 40%;
+  margin-left:58%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ecf0f1;
+  text-align: center;
+  }
+
+  .row .three:hover .enter{
+visibility: visible;
+opacity: 1;
+  }
+}
+
+@media (max-width:1240px){
+    .content{
+        padding: 0px;
+    }
+
+    .row .three{
+        padding: 8px 30px;
+        margin-top: 40%;
+        margin-left:64%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #ecf0f1;
+        text-align: center;
+    }
+}
+
+@media (min-width:1201px){
+
+    .row .three{
+        padding: 8px 30px;
+        margin-top: 46%;
+        margin-left:58%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #ecf0f1;
+        text-align: center;
+    }
+}
+
+@media (max-width:800px){
+    .row .three{     
+       padding: 8px 30px;
+       margin-top: 40%;
+       margin-left:58%;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+       color: #ecf0f1;
+       text-align: center;
+    }
+}
+
+@media(max-width:500px){
+    .coming-soon{
+        width:160px;
+        margin-top: 55%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hamburger .line{
+        transform: translate(95%, 640%);
+        background-color: #fff;
+        width:80px;
+        height:32px;
+        margin-left: 14px;
+        z-index: 9;
+    }
+
+    .row .three:hover .enter{
+        visibility: visible;
+        opacity: 1;
+        color: blue;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 5px 5px 5px #000;
+        margin-top:130%;
+        margin-left:50%;
+        z-index: 99999;
+    }
+   
+    #hamburger-10.is-active{
+        margin-top: 121px;
+        margin-left: 175px;
+    }
+
+    #hamburger-10.is-active .line{
+        width: 140px;
+        height: 18px;
+        background-color: #fff;
+        transition: all ease-in 300ms;
+        margin:10px auto; 
+    }
+
+    #hamburger-10.is-active .line:nth-child(1){
+        width: 140px
+    }
+
+    #hamburger-10.is-active .line:nth-child(2){
+        width: 140px
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="hero">
+        <header class="header-section">
+            <video autoplay muted loop id="video-background">
+                <source src="img/background.mp4" type="video/mp4">
+            </video>
+        </header>
+     
+        <div class="content">
+            <h1 class="coming-soon" data-text="coming soon...">coming soon...</h1>
+           
+            <div class="container">
+                <div class="row cf">
+                  <div class="three col">
+                    <div class="hamburger" id="hamburger-10">
+                      <span class="line"></span>
+                      <span class="line"></span>
+                      <span class="line"></span>
+                    </div>
+                    <div class="enter">Enter</div>
+                  </div>   
+                </div>
+              </div>
+          
+        </div>
+    </div>
+            <div class="social-links">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        
+   
+    
+    <!--Menu Icon rotatiorn JS code-->
+    <script type="text/javascript" 
+       src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js">
+    </script>
+    <script>
+        $(".hamburger").hover{
+            function(){
+                $(this).append($("<span> ENTER</span>"));
+            }, function(){
+                $(this).find("span").last().remove();
+            }
+        };
+    $(document).ready(function(){
+    $(".hamburger").click(function(){
+    $(this).toggleClass("is-active");
+  });
+});
+</script>
+</body>
+</html>
