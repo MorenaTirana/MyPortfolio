@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio | Area of a Triangle</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<style>
+
+body{
+  width: 100%;
+}
+
+h3 {
+  margin-left: 150px;
+}
+
+h1 {
+  margin-left: 170px;
+}
+
+.green {
+  color: #33cc33;
+}
+.blue {
+  color: #3333dd;
+}
+.red {
+  color: #ff0000;
+}
+.purple {
+  color: #800080;
+}
+
+/* Header */
+
+.header{
+    display: flex;
+    height: 110px;
+    justify-content: space-evenly;
+    background-color:#c0bdbd;
+    gap:200px;  
+    padding-top: 10px; 
+}
+
+/* Header - Link to Homepage */
+.home{
+    z-index:99; 
+    margin-left: -40px;
+}
+
+.home img{
+    width:30px;
+    height:30px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    box-shadow: 2px 2px 10px 10px #4e4b4b;
+}
+
+.home img:hover{
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #000;
+    transition: all 0.1s;
+    box-shadow: 2px 2px 10px 10px #fff;
+}
+
+/* Header - Title */
+.title{
+  padding-top: 10px;
+  margin-left: 30px;
+}
+
+h1 {
+  color:#fff;
+  text-shadow: 2px 2px 4px #000;
+  /*color: rgb(87, 77, 77);*/
+}
+
+.title .blue{
+  text-shadow: 2px 4px 4px #fff;
+}
+
+/* Header  - GitHub Link */
+.right {
+  width: 10%;
+  display: flex;
+  background-color: #e5e5e5;
+  align-items: center;
+  height:30px;
+  margin-top: 10px;
+  margin-right: -30px;
+  padding: 15px auto;
+  padding-left: 20px;
+  box-shadow: 10px 10px 10px 10px #4e4b4b;
+  z-index: 99;
+}
+
+.right a{
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.right a:hover{
+  color:#fff;
+  border-bottom: 3px solid #fff;
+  transition: all ease-in .1s;
+  text-shadow: 2px 2px 4px #000;
+}
+/* Main Section */
+
+.design{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 50px;
+}
+
+.main {
+  text-align: center;
+  width: 60%;
+  padding: 20px auto;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+}
+
+.main-phrase{
+    padding-top:25px;
+}
+
+.main h3{
+  margin-left: 20px;
+}
+
+.first-step {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 100px;
+
+}
+
+.s {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 170px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Fraction {
+  display: table-cell;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.Denominator {
+  border-top: 1px solid #000;
+  display: block;
+}
+
+.Fraction,
+.Numerator,
+.Denominator {
+  padding: 0px 5px;
+}
+
+#formula {
+  position: absolute;
+  top: 25px;
+  width: 500px;
+  left: 300px;
+  white-space: nowrap;
+  line-height: 1em;
+  font-size: 80%;
+  background-color: pink;
+}
+
+#formula h2 {
+  margin-left: 50px;
+}
+#formula p {
+  margin-left: 10%;
+}
+
+.radix > span {
+  text-decoration: overline;
+}
+
+.radix:before {
+  content: '\00221a'; /* unicode for &radic; */
+  position: relative;
+  top: 1px;
+}
+
+/* Calculations Section */
+.calculations {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px 80px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+  margin-bottom: 10px;
+}
+
+/* Calculations Section - Design the Triangle */
+.main-1{
+  width:400px;
+  padding: 20px 20px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+  text-align: center;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+#container {
+  font-family: Ubuntu;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#container > div {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 20px 20px 10px;
+}
+
+#container > div > span {
+  width: 10px;
+  color: blue;
+}
+
+#container > div > input {
+  margin-left: 20px;
+  width: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#container button {
+  margin-left: 10px;
+  width: 60px;
+  padding:10px 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#container button:hover{
+  background-color: green;
+}
+
+svg {
+  width:250px;
+  height:250px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 0 0 20px;
+  background-color: #1b87ec;
+}
+
+
+/* Calculations Section - Circumference & Area */
+.main-2 {
+  padding: 20px 20px;
+  width:400px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+  text-align: center;
+}
+
+#result {
+  color: purple;
+}
+
+#ans {
+  color: blue;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.calculate-area {
+  width: 800px;
+  height: 400px;
+  padding: 0 70px;
+  margin-left: 350px;
+  margin-top: 50px;
+  display: block;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+}
+
+.calculate-area .blue {
+  font-weight: bold;
+  font-size: 20px;
+}
+.calculate-area h2 {
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+
+input[type='text'] {
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
+  text-align: center;
+  background-color: #1b87ec;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+input[type='submit'] {
+  background-color: red;
+  color: #fff;
+  margin-top: 12px;
+  margin-left: 10%;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 4px 5px 5px red;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer{
+    text-align: center;
+    padding-top:15px;
+    background-color: #aaaaaa;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    padding-bottom: 15px;
+}
+
+.footer span{
+    color: #fff;
+    text-shadow: 4px 2px 4px #b10000fd;
+    font-weight: bold;
+}
+
+/* Media Query Sizings */
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+
+.header{
+  display: inline-block;
+  width:100%;
+  text-align: center;
+  height: auto;
+  }
+  
+  .home{
+    margin-left:10px;
+  }
+
+  .title{
+    margin-left: -150px;
+  }
+
+  .right{
+    width:96%;
+    justify-content: center;
+  }
+
+  .design{
+    margin-top: 10px;
+    display: block;
+    width:115%;
+  }
+
+  .main{
+    display: inline-block;
+    justify-content: center;
+    padding: 20px 20px;
+  }
+
+  .first-step{
+    margin-left: -70px;
+  }
+
+  .calculations{
+    display: block;
+    width:55%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 25px;
+  }
+
+  .main-1, .main-2{
+    width:130%;
+    margin-bottom: 7px;
+    margin-left: -60px;
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="home">
+        <a href="index.html">
+            <img src="img/home.png">
+        </a>
+    </div>
+
+    <div class="title">
+        <h1>
+            Area of a
+            <span class="blue">Triangle</span>
+        </h1>
+    </div>
+    <div class="right">
+        <a href="https://github.com/MorenaTirana/Circumference-Area-of-a-Circle">
+          GitHub Source Code
+        </a>
+    </div>
+</div>
+
+<div class="design" >
+  <div class="main">   
+    <h3>
+            According to <span class="red"> Heron's Formula</span>
+    </h3>
+    <p> first calculate the value of 
+      <span class="green">s</span>
+        which represents half of the triangle's perimeter
+    </p>
+    <div class="first-step">
+      <div class="s">
+                <span class="purple">s</span>
+      </div> 
+      = 
+      <span class="Fraction">
+        <span class="Numerator">
+          <span class="blue"> a </span> 
+          + 
+          <span class="blue"> b </span> 
+          +
+          <span class="blue"> c </span> 
+        </span>
+        <span class="Denominator"> 2</span>
+      </span>
+    </div>
+    <br>
+    <p> 
+      Now calculate the 
+      <span class="green"> Triangle's Area </span> 
+      as follows:
+    </p>
+    <h2>
+      <span class="green">Area</span> 
+      = Math.sqrt(
+      <span class="purple">s</span> 
+      * ((
+      <span class="purple">s</span> 
+      - 
+      <span class="blue">a</span>
+      ) * (
+      <span class="purple">s</span> 
+      - 
+      <span class="blue">b</span>
+      ) *(
+      <span class="purple">s</span> 
+      - 
+      <span class="blue">c</span>
+      )));    
+    </h2>
+  </div>
+</div>
+
+<div class="calculations"> 
+  <div class="main-1"> 
+    <div id='wrapper'>
+      <div id='container'>
+        <div>
+          <span>A: </span>
+            <input type="number" id="side-a" value=" "/>
+        </div>
+        <div>
+          <span>B: </span>
+          <input type="number" id="side-b" value=" "/>
+        </div>
+        <div>
+          <span>C: </span>
+          <input type="number" id="side-c" value=" "/>
+        </div> 
+      <div>
+      <button>DRAW</button>
+    </div>
+  </div>
+  <svg>
+    <polygon transform="translate(50,50)" />
+  </svg>
+</div>
+  </div>
+   
+  <div class="main-2">
+    <h2>
+      <span class="green" style="font-size:30px;">
+        Area
+      </span> 
+      of a 
+      <span class="blue" style="font-size:30px;">
+        Triangle
+      </span>
+    </h2>   
+    <p> Enter length of 
+      <span class="blue">a</span> :
+      <input type = 'text' id = "a">
+    </p>
+        
+    <p>Enter length of 
+      <span class="blue">b</span> 
+      :
+      <input type = 'text' id = "b">
+    </p>
+        
+    <p> Enter length of 
+      <span class="blue">c</span> :
+      <input type = 'text' id = "c">
+    </p>
+  
+    <input type = 'submit' 
+      value = 'Calculate' onclick = 'Area()'>
+    <p style="padding-left:20px; font-weight:bold;">
+      The 
+      <span class="green"> Area </span> 
+      is:
+    </p>
+    <p id = 'ans'></p>       
+  </div>
+</div>
+  
+      
+<div class="footer"> 
+  Made with ❤️ by 
+  <span>Morena Tirana</span>
+</div>
+ 
+    <script>
+      function Area() {
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+    var c = parseInt(document.getElementById("c").value);
+  
+    console.log(typeof(a));
+    var s = (a + b + c) / 2;
+    var area = Math.sqrt(s * ((s - a) * (s - b) * (s - c)));
+  
+    document.getElementById("ans").innerHTML = area;
+  }
+  
+  const calculateTriangle = (a, b, c) => {
+    const ax = 0;
+    const ay = 0;
+    const bx = ax + c;
+    const by = ay;
+    const cosAlpha = (a * a - b * b - c * c) / (b * c * 2);
+    const alpha = Math.acos(cosAlpha);
+    const cx = ax - b * cosAlpha;
+    const cy = ay + b * Math.sin(alpha);
+  
+    return {ax, ay, bx, by, cx, cy};
+  };
+  
+  const onDraw = () => {
+      const a = d3.select('#side-a').node().value;
+      const b = d3.select('#side-b').node().value;
+      const c = d3.select('#side-c').node().value;
+    const {ax, ay, bx, by, cx, cy} = calculateTriangle(parseInt(a), parseInt(b), parseInt(c));
+    d3.select('polygon').attr('points', `${ax},${ay} ${bx},${by} ${cx},${cy}`)
+    console.log('T: ', t);
+  }
+  
+  d3.select('button').on('click', onDraw);
+  
+  
+    </script>
+
+</body>
+</html>
