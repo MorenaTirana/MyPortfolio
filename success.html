@@ -18,6 +18,10 @@
     ></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        #contact-me{
+            background-color: black;
+            text-align: center;
+        }
         @media(max-width:500px){
           
             #submit{
@@ -32,7 +36,6 @@
 
         }
     </style>
-
 </head>
 <body>
 
@@ -62,55 +65,55 @@
         <img src="img/img1.png" class="image" alt="">
     </section>
 
-    <!--- about section -->
-    <section class="about" id="about-section">
-        <h2 class="heading"><span class="highlight">about </span> me </span></h2>
-        <p class="sub-heading">I thrive learning!</p>
-        <div class="separator"></div>
 
-        <div class="about-me-container">
-            <div class="left-col">
-                <img src="img/CV.png" class="about-image" alt="My CV">
-                <button onclick="download()">Download CV</button>
-            </div>
-        
-            <div class="right-col">
-                <p> 
-                   Born in Durres, Albania 🇦🇱, raised up in Italy 🇮🇹, I 
-                   have lived in Amsterdam 🇳🇱, 2010 - 2011, Ibiza 🇪🇸, 2013, 
-                   Saudi Arabia 🇸🇦, 2015 - 2017, 
-                   and since 2017 I am based in Stockholm, Sweden 🇸🇪.
-                   Raising up in Italy was a blessing since Italy is not only
-                   one of the most beautiful countries in the world, but also because
-                   Italy provides a rich culture and education which did shape my 
-                   personality and cultural background. 
-                   Among all these countries I lived in, Saudi Arabia gave me the most 
-                   pleasant experience on a professional and human level because I worked 
-                   at the Italian School of Jeddah
-                   as Administrative Assistant and Technology Teacher of Grades 6, 7, and 8. 
-                   <br/> <br/>
-                    I studied Foreign Languages during my Lyceum (highschool) years 
-                   , Math Engineering at the Polytechnic 
-                   of Milan, and Software Engineering at the Arizona State University.
-                   Despite being a working student, the financial limitations
-                   faced  affected the achievement of my bachelor in due time. 
-                   So, now I still miss few exams from getting my Bachelor in Software Engineering. 
-                   In the meantime, my PASSION for coding has driven me to keep coding and 
-                   improve my coding skills every day more. 
-                   Coding is my passion and my dream is to work as a programmer. 
-                   <br/> <br/>
-                   Alongside with coding, I also love Art and History. 
-                   I love creativity in all ways and shapes. I dream of opening my own 
-                   Art gallery one day so I could see exposed all artists I love.
-                   I consider coding as a form of art combined with science. 
-                </p>
-            </div>
+   <!--- about section -->
+   <section class="about" id="about-section">
+    <h2 class="heading"><span class="highlight">about </span> me </span></h2>
+    <p class="sub-heading">I thrive learning!</p>
+    <div class="separator"></div>
+
+    <div class="about-me-container">
+        <div class="left-col">
+            <img src="img/CV.png" class="about-image" alt="My CV">
+            <button onclick="download()">Download CV</button>
         </div>
+    
+        <div class="right-col">
+            <p> 
+               Born in Durres, Albania 🇦🇱, raised up in Italy 🇮🇹, I 
+               have lived in Amsterdam 🇳🇱, 2010 - 2011, Ibiza 🇪🇸, 2013, 
+               Saudi Arabia 🇸🇦, 2015 - 2017, 
+               and since 2017 I am based in Stockholm, Sweden 🇸🇪.
+               Raising up in Italy was a blessing since Italy is not only
+               one of the most beautiful countries in the world, but also because
+               Italy provides a rich culture and education which did shape my 
+               personality and cultural background. 
+               Among all these countries I lived in, Saudi Arabia gave me the most 
+               pleasant experience on a professional and human level because I worked 
+               at the Italian School of Jeddah
+               as Administrative Assistant and Technology Teacher of Grades 6, 7, and 8. 
+               <br/> <br/>
+                I studied Foreign Languages during my Lyceum (highschool) years 
+               , Math Engineering at the Polytechnic 
+               of Milan, and Software Engineering at the Arizona State University.
+               Despite being a working student, the financial limitations
+               faced  affected the achievement of my bachelor in due time. 
+               So, now I still miss few exams from getting my Bachelor in Software Engineering. 
+               In the meantime, my PASSION for coding has driven me to keep coding and 
+               improve my coding skills every day more. 
+               Coding is my passion and my dream is to work as a programmer. 
+               <br/> <br/>
+               Alongside with coding, I also love Art and History. 
+               I love creativity in all ways and shapes. I dream of opening my own 
+               Art gallery one day so I could see exposed all artists I love.
+               I consider coding as a form of art combined with science. 
+            </p>
+        </div>
+    </div>
 
-    </section>
-
-          <!---best selling products-->
-          
+</section>
+    <!---Projects Section-->
+            
     <section class="projects" id="projects">
         <h2 class="heading"><span class="highlight">My </span> Projects </span></h2>
         <div class="separator"></div>
@@ -178,53 +181,16 @@
         </div>
     </section>
     
-    <!---Contact Section-->
-    <section class="contact" id="contact-section">
-      <div class="container mt-5">
-        <h1 class="contact-me">Contact Me!</h1>
-        <form class="row g-3" 
-         action="https://formsubmit.co/f959e7f4be88f9b09d0e1343d7a14733"
-         method="POST">
-          <!-- Honeypot -->
-          <input type="text" name="_honey" style="display: none;">
-
-          <!-- Disable Captcha -->
-          <input type="hidden" name="_captcha" value="false">
-
-          <input type="hidden" name="_next" 
-          value="https://morenatirana.github.io/portfolio/success.html" >
-
-          
-          <div class="col-md-6">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" name="name" id="firstName" required>
-          </div>
-          <div class="col-md-6">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
-          </div>
-          <div class="col-md-8">
-            <label for="emailInfo" class="form-label">E-mail</label>
-            <input type="email" class="form-control" name="email" id="emailInfo" required>
-          </div>
-          <div class="col-md-4">
-            <label for="phoneNumber" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" name="phone" id="phoneNumber" 
-            placeholder="+1 (415) 867-5309">
-          </div>
-          <div class="col-md-12">
-            <label for="comments" class="form-label">Message Content:</label>
-            <textarea class="form-control" id="comments" name="Message,&nbsp;Content" 
-            rows="3" required></textarea>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-          </div>
-        </form>
+    <!---contact form -->
+  
+    <div class="container mt-5" id="contact-me">
+        <h1 class="mb-5">Your Message was Sent Successfully!</h1>
+        <p>Thank You for contacting me! 
+            <br/>
+            I will get back to you as soon as possible.</p>
     </div>
-  </section>
 
-<!---Footer-->
+    <!---Footer-->
 
     <footer class="footer-1">
         <h1 class="footer-heading">
@@ -234,6 +200,10 @@
             Morena Tirana
         </h1>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+    crossorigin="anonymous"></script>
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
    
