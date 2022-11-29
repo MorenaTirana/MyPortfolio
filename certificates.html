@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive CSS Grid Animation</title>
+
+  <style>
+    .grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-auto-rows: 12rem;
+  grid-auto-flow: dense row;
+  --stagger-delay: 90ms;
+  
+  
+}
+
+@keyframes cardAnim {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #FFFFFF;
+  font-family: 'Helvetica Neue';
+  font-size: 3rem;
+  border-radius: 1rem;
+  animation: cardAnim 900ms ease-out;
+  animation-fill-mode: backwards;
+  background-size: cover;
+  object-fit: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform .5s;
+}
+.card:hover{
+  transform: scale(1.03);
+}
+
+.card:nth-child(1){
+  animation-delay: calc(1 * var(--stagger-delay));
+}
+
+.card:nth-child(2){
+  animation-delay: calc(12 * var(--stagger-delay));
+}
+
+.card:nth-child(3){
+  animation-delay: calc(5 * var(--stagger-delay));
+}
+
+.card:nth-child(4){
+  animation-delay: calc(4 * var(--stagger-delay));
+}
+
+.card:nth-child(5){
+  animation-delay: calc(3 * var(--stagger-delay));
+}
+.card:nth-child(6){
+  animation-delay: calc(6 * var(--stagger-delay));
+}
+card:nth-child(7){
+  animation-delay: calc(7 * var(--stagger-delay));
+}
+.card:nth-child(8){
+  animation-delay: calc(8 * var(--stagger-delay));
+}
+.card:nth-child(9){
+  animation-delay: calc(9 * var(--stagger-delay));
+}
+.card:nth-child(10){
+  animation-delay: calc(10 * var(--stagger-delay));
+}
+.card:nth-child(11){
+  animation-delay: calc(11 * var(--stagger-delay));
+}
+.card:nth-child(12){
+  animation-delay: calc(2 * var(--stagger-delay));
+}
+
+.tall {
+  background-color: #999999;
+}
+
+.wide {
+  background-color: #666666;
+}
+
+@media screen and (min-width: 600px) {
+  
+  .tall {
+  grid-row: span 2 / auto;
+}
+
+  .wide {
+  grid-column: span 2 / auto;
+}
+}
+
+
+  </style>
+
+</head>
+
+<body>
+  <div class='grid'>
+    
+      <div class='card tall' style="background-image:url('img/TEFL-certificate.png')"></div>
+      <div class='card' style="background-image:url('img/Brainnest-certificate.png')"></div>
+      <div class='card wide' style="background-image:url('img/SheCodes-certificate-1.png')"></div>
+      <div class='card' style="background-image:url('img/SheCodes-certificate-2.png')"></div>
+    </section>
+</body>
+</html>
