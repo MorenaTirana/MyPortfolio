@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larger one among 2 Integers </title>
+
+<style>
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    align-items: center;
+}
+
+h1{
+  color:#fff;
+  text-shadow: 2px 2px 4px #000;
+  padding: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 40px;
+  font-weight: bold; 
+}
+
+.green,
+.blue,
+.red,
+.purple {
+  text-shadow: 1px 3px #fff, 0 0 25px #fff, 0 0 15px #fff;
+  text-transform: uppercase;
+}
+
+.green {
+  color: #33cc33;
+}
+
+.blue {
+  color: #3333dd;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.purple {
+  color: #800080;
+}
+
+/* Header */
+
+.header{
+    display: flex;
+    height: 130px;
+    justify-content: space-evenly;
+    background-color:#c0bdbd;
+    gap:160px;   
+}
+
+/* Header Section - Link to Homepage */
+.home{
+    z-index:99; 
+    margin-left: 10px;
+}
+
+.home img{
+    width:30px;
+    height:30px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    box-shadow: 2px 2px 10px 10px #4e4b4b;
+}
+
+.home img:hover{
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #000;
+    transition: all 0.1s;
+    box-shadow: 2px 2px 10px 10px #fff;
+}
+
+/* Header Section - Title */
+.title{
+  margin-top: -5px;
+  align-items:center;
+  margin-left: 170px;
+}
+
+/* Header Section - GitHub Link */
+.right {
+  width: 15%;
+  display: flex;
+  background-color: #e5e5e5;
+  align-items: center;
+  height:30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 15px 40px;
+  box-shadow: 10px 10px 10px 10px #4e4b4b;
+  z-index: 99;
+}
+
+.right a{
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.right a:hover{
+  color:#fff;
+  border-bottom: 3px solid #fff;
+  transition: all ease-in .1s;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Main Section */
+
+.design{
+  overflow:auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px 50px;
+}
+
+/* Main Section */
+
+.main {
+  text-align: center;
+  float: left;
+  width: 100%;
+  padding: 20px 20px;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px 10px 10px #8b8787;
+}
+
+.main-phrase{
+    padding-top:25px;
+}
+
+.main h2{
+    color: #8b8787;
+}
+
+/* Calculation Section */
+
+.content {
+  width:90%;
+  margin-top: -20px;
+  text-align: center;
+  padding-top:40px;
+  margin-left: 60px;
+  z-index: 9;
+  height: 300px;
+  opacity: 1;
+  box-shadow: 10px 10px 10px 10px #8b8787;
+}
+
+.inputs {
+  display: block;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 3px 3px #fff;
+  text-shadow: 1px 3px #000, 0 0 25px #000, 0 0 15px #000;
+}
+
+.inputs p {
+  padding-bottom: 10px;
+}
+
+input[type='number'] {
+  width: 80px;
+  height: 40px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.response {
+  display: block;
+  width: 500px;
+  margin-left: 32%;
+  font-size: 40px;
+  color: #fff;
+  text-shadow: 3px 5px black, 0 0 25px black, 0 0 15px black;
+}
+
+button {
+  background-color: red;
+  color: #fff;
+  width: 140px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  box-shadow: 4px 5px 5px red;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-right: 70px;
+}
+
+#ans {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: -20%;
+  color: yellow;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 1px 3px #fff, 0 0 25px #fff, 0 0 15px #fff;
+}
+
+/* Footer */
+.footer{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+    text-align: center;
+    padding-top:15px;
+    background-color: #c0bdbd;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    padding-bottom: 15px;
+}
+
+.footer span{
+    color: #fff;
+    text-shadow: 4px 2px 4px #b10000fd;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+
+    body{
+      text-align: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .header{
+        display: block;
+        text-align: center;
+        height: 260px;
+        max-width: 100%;
+    }
+
+    .title{
+        margin-left: -20px;
+        margin-bottom: -10px;
+    }
+
+    .right{
+        width:100%;
+        height: 40px;
+        padding:15px 190px;
+
+    }
+
+    .main{
+        width:100%;
+        height: 120px;
+    }
+
+    .content{
+        width: 78%;
+        margin-left: 11%;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .inputs{
+        display: flex;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    #number{
+      margin-left: 10%;
+    }
+
+    button{
+        margin-left: 80px;
+        margin-top: -10px;
+    }
+
+    .response{
+        margin-left:-25%;
+    }
+
+    #ans{
+        font-size: 20px;
+        text-align: center;
+        margin-top: -10px;
+        margin-left: 18px;
+    }
+
+    .inputs #number{
+        margin-top:20px;
+        margin-bottom: -30px;
+        margin-right: 40px;
+    }
+}
+   </style>
+    
+</head>
+<body>
+        <div class="header">
+            <div class="home">
+                <a href="index.html">
+                    <img src="img/home.png">
+                </a>
+            </div>
+            <div class="title">
+                <h1>
+                    <span class="green">Even</span>
+                     & 
+                    <span class="blue">Odd</span>
+                 Numbers
+                </h1>
+            </div>
+            <div class="right">
+                <a href="https://github.com/MorenaTirana/Circumference-Area-of-a-Circle">
+                  GitHub Source Code
+                </a>
+            </div>
+        </div>
+        <div class="design" >
+            <div class="main">
+                <h2> Enter a Number & display whether it's 
+                  <br/>
+                    <span class="green">Even</span> 
+                    or 
+                    <span class="blue">Odd</span>
+                </h2>    
+            </div>
+        </div>
+
+        <div class="content">            
+            <div class="inputs">
+                <p> 
+                    Enter a 
+                    <span class="purple"> number</span> 
+                    here :
+                    <input type="number" id='number'/>
+                </p>
+            </div>
+             <h3 class="response">
+                 <button onclick="even_odd();">Check</button>
+                 <div id="ans"> </div>
+            </h3> 
+        </div>
+
+    <div class="footer"> 
+        Made with ❤️ by 
+        <span>Morena Tirana</span>
+    </div>
+
+  <script>
+      function even_odd(){
+    var num =   document.getElementById('number').value;
+
+    if ( num % 2){
+        document.getElementById('ans').innerHTML = `
+        <p style='
+        font-size: 60px; 
+        text-shadow: 1px 3px #000, 
+                     0 0 25px #000, 
+                     0 2px 15px yellow;
+        
+        margin-top:-20px;
+        padding-right:5px;
+        
+        '>
+            ${num}
+        </p>
+        <p style='color: transparent; text-shadow:none;'>_</p>
+        <p style='color: black;'> is an </p>
+        <p style='color: transparent; text-shadow:none;'>_</p>
+        <p style='color:blue;'> Odd</p>
+        <p style='color: transparent; text-shadow:none;'>_</p>
+        <p style='color: black;'> number </p>
+        `;
+    }
+    else{
+        document.getElementById('ans').innerHTML = `
+        <p style='
+        font-size: 60px; 
+        text-shadow: 1px 3px #000, 
+                     0 0 25px #000, 
+                     0 2px 15px yellow;
+                    '>
+            ${num}
+        </p>
+        <p style='color: transparent; text-shadow:none;'>_</p>
+        <p style='color: black;'> is an </p>
+        <p style='color: transparent; text-shadow:none;'>_</p>
+        <p style='color:green;'> Even</p>
+        <p style='color: transparent; text-shadow:none;'>_</p>
+        <p style='color: black;'> number </p>
+        `;
+    }
+}
+  </script>  
+
+</body>
